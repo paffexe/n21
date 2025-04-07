@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./h_style.css">
+</head>
+<body>
+
+        <button class="my-btn" onclick="getPokemon()">Tasodifiy Pokemon</button>
+
+
+        <div class="container" id="container">
+      <div
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+      style="background-color:antiquewhite;">
+         <h2 id="pokemonName"></h2>
+          <img
+            class="rounded-t-lg"
+            id="pokemonImg"
+            src=""
+            alt="Img not found"
+          />
+        <div class="p-5">
+          <a href="#">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
+            <div class="textColor">
+            <h5 id="pokemonType" >Turi: </h5>
+
+              <ul class="statsColor">
+                <li>hp: <span id="0"></span></li>
+                <li>attack: <span id="1"></span></li>
+                <li>defense: <span id="2"></span></li>
+                <li>special-attack: <span id="3"></span></li>
+                <li>special-defense: <span id="4"></span></li>
+                <li>speed: <span id="5"></span></li>
+              </ul>
+            </div>
+
+            </h5>
+          </a>
+        </div>
+      </div>
+
+    <script defer src="./h_main.js"></script>
+</body>
+</html>
