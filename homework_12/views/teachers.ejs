@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <%- include("./partials/nav.ejs") %>
+    <h3>Teachers</h3>
+    <ol>
+      <% teachers.forEach(teacher => { %>
+      <li>
+        <a href="/teacher/<%= teacher.id  %>">
+          <%= teacher.name %> - <%= teacher.email %> 
+        </a>
+      </li>
+      <% }); %>
+    </ol>
+    <h2><a href="/add-teacher">Add new teacher </a></h2>
+  </body>
+</html>

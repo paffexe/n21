@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <%- include("./partials/nav.ejs") %>
+    <h3>Ustoz ma'lumotlarini tahrirlash:</h3>
+
+    <form
+      action="/edit_teacher/<%= teacher.id %>?_method=PUT"
+      method="post"
+      id="post-form"
+    >
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        value="<%= teacher.name %>"
+      /><br /><br />
+
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        value="<%= teacher.username %>"
+      /><br /><br />
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        value="<%= teacher.email %>"
+      /><br /><br />
+
+      <label for="phone">Phone</label>
+      <input
+        type="tel"
+        name="phone"
+        id="phone"
+        value="<%= teacher.phone %>"
+      /><br /><br />
+      <button type="submit">Saqlash</button>
+    </form>
+  </body>
+</html>

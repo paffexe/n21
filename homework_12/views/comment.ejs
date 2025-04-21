@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <%- include("./partials/nav.ejs") %>
+    <h3>Comment: <%= comment.id %></h3>
+
+    <p>Name: <%= comment.name %></p>
+    <p>Email: <%= comment.email %></p>
+    <p>Body: <%= comment.body%></p>
+
+    <a href="/edit-comment/<%= comment.id %>">Tahrirlash</a>
+
+    <button data-id="<%= comment.id %>" id="del-comment">O'chirish</button>
+
+    <script>
+      const delComment = document.getElementById("del-comment");
+      delComment.addEventListener("click", (e) => {
+        const id = e.target?.dataset?.id || null;
+
+        if (id) {
+          fetch(`/comment/${id}`, { method: "DELETE" }).then(() => {
+            console.log("Comment deleted");
+            setTimeout(() => {
+              window.location.href = "/comments";
+            }, 2000);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

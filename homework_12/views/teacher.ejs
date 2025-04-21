@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <%- include("./partials/nav.ejs") %>
+    <h3>Teacher: <%= teacher.name %></h3>
+
+    <p>Username: <%= teacher.username %></p>
+    <p>Eail: <%= teacher.email %></p>
+    <p>Phone: <%= teacher.phone %></p>
+    <p>Address: <%= teacher.address?.city %></p>
+    <p>Company: <%= teacher.company?.name %></p>
+
+    <a href="/edit-teacher/<%= teacher.id %>">Tahrirlash</a>
+
+    <button data-id="<%= teacher.id %>" id="del-teacher">O'chirish</button>
+
+    <script>
+      const delTeacher = document.getElementById("del-teacher");
+      delTeacher.addEventListener("click", (e) => {
+        const id = e.target?.dataset?.id || null;
+
+        if (id) {
+          fetch(`/teacher/${id}`, { method: "DELETE" }).then(() => {
+            console.log("Teacher deleted");
+            setTimeout(() => {
+              window.location.href = "/teachers";
+            }, 2000);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
